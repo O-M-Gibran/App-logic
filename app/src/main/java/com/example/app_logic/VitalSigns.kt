@@ -12,8 +12,8 @@ data class Measurement(
     val spo2Reference: Int
 ) {
     companion object {
-        const val MAX_ERROR_SPO2 = 30.0
-        const val MAX_ERROR_BPM = 30.0
+        const val MAX_ERROR_SPO2 = 6.0
+        const val MAX_ERROR_BPM = 50.0
     }
 
     fun bpmError(): Double =

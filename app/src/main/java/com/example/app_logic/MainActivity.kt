@@ -138,9 +138,9 @@ class MainActivity : AppCompatActivity() {
                 )
                 val measurement = Measurement(
                     bpmMeasured = vitals.bpm,
-                    bpmReference = 70,
+                    bpmReference = 80,
                     spo2Measured = vitals.spo2,
-                    spo2Reference = 90
+                    spo2Reference = 95
                 )
 
                 val result = if (!measurement.isValid()) {
@@ -155,9 +155,9 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     val statusText = when (result) {
                         AsthmaLevel.SEVERE, AsthmaLevel.MODERATE -> {
-                            val location = "https://www.google.com/maps/place/-7.2575,112.7521"
-                            alert("Asma ${result.name.lowercase()}! Kirim lokasi...")
-                            println("Sending SMS to $phoneNumber: $location")
+                           // val location = "https://www.google.com/maps/place/-7.2575,112.7521"
+                           // alert("Asma ${result.name.lowercase()}! Kirim lokasi...")
+                           // println("Sending SMS to $phoneNumber: $location")
                             println("Buzzer ON")
                             "⚠️ Asma ${result.name.lowercase()} terdeteksi!"
                         }
